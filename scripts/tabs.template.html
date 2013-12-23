@@ -1,0 +1,45 @@
+<!--Our navigation router with some animations set -->
+<pane nav-router animation="slide-left-right-ios7">
+    <!-- The nav bar that will be updated as we navigate -->
+    <nav-bar class="nav-title-slide-ios7" type="bar-dark" back-button-type="button-icon"
+             back-button-icon="icon ion-arrow-left-c"></nav-bar>
+    <nav-page id="app-page" ng-controller="AppCtrl">
+
+        <!--
+        Create tabs with an icon and text label, using the tabs-positive style (blue by default),
+        and disabling header title animation when switching tabs.
+        -->
+        <tabs tabs-style="tabs-icon-top" tabs-type="tabs-dark" animate-nav="true">
+
+            <!-- Home tab -->
+            <tab title="Home Tab" icon="icon ion-home" ng-controller="HomeTabController">
+
+                <input type="number" ng-model="roundProgressData.label"/>
+                <!-- You can see here that you can override the default settings of the directive (color, size, width, font, etc) -->
+                <div ang:round:progress data-round-progress-model="roundProgressData"
+                     data-round-progress-width="500"
+                     data-round-progress-height="500"
+                     data-round-progress-outer-circle-width="40"
+                     data-round-progress-inner-circle-width="10"
+                     data-round-progress-outer-circle-radius="200"
+                     data-round-progress-inner-circle-radius="140"
+                     data-round-progress-label-font="100pt Arial"
+                     data-round-progress-outer-circle-background-color="#505769"
+                     data-round-progress-outer-circle-foreground-color="#12eeb9"
+                     data-round-progress-inner-circle-color="#505769"
+                     data-round-progress-label-color="#000000">
+                </div>
+            </tab>
+
+
+            <!-- Search tab -->
+            <tab title="Test Tab" icon="icon ion-search">
+                <content has-header="true" has-tabs="true" padding="true">
+                    <div >Hello World</div>
+                </content>
+            </tab>
+
+
+        </tabs>
+    </nav-page>
+</pane>
